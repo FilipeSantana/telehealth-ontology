@@ -74,6 +74,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/IAO_0000412 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000412"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -324,12 +330,6 @@ purpose of a study; support of hypothesis, discovery of new information</obo:IAO
         <rdfs:label xml:lang="en">information content entity</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;IAO_0000136"/>
-                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000058"/>
                 <owl:someValuesFrom>
                     <owl:Class>
@@ -342,6 +342,12 @@ purpose of a study; support of hypothesis, discovery of new information</obo:IAO
                         </owl:intersectionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;IAO_0000136"/>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000112 xml:lang="en">Examples of information content entites include journal articles, data, graphical layouts, and graphs.</obo:IAO_0000112>
@@ -440,6 +446,158 @@ Request that IAO either clarify these or change definitions not to use them</rdf
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_10239 -->
+
+    <owl:Class rdf:about="&obo;NCBITaxon_10239">
+        <rdfs:subClassOf rdf:resource="&obo;OBI_0100026"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_117571 -->
+
+    <owl:Class rdf:about="&obo;NCBITaxon_117571">
+        <rdfs:label rdf:datatype="&xsd;string">Euteleostomi</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;NCBITaxon_7742"/>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">Euteleostomi</obo:IAO_0000111>
+        <obo:IAO_0000118 rdf:datatype="&xsd;string">bony vertebrates</obo:IAO_0000118>
+        <obo:IAO_0000412 rdf:resource="&obo;ncbitaxon.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_2 -->
+
+    <owl:Class rdf:about="&obo;NCBITaxon_2">
+        <rdfs:label rdf:datatype="&xsd;string">Bacteria</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;OBI_0100026"/>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">Bacteria</obo:IAO_0000111>
+        <obo:IAO_0000118 rdf:datatype="&xsd;string">eubacteria</obo:IAO_0000118>
+        <obo:IAO_0000412 rdf:resource="&obo;ncbitaxon.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_2157 -->
+
+    <owl:Class rdf:about="&obo;NCBITaxon_2157">
+        <rdfs:label rdf:datatype="&xsd;string">Archaea</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;OBI_0100026"/>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">Archaea</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;ncbitaxon.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_2759 -->
+
+    <owl:Class rdf:about="&obo;NCBITaxon_2759">
+        <rdfs:label rdf:datatype="&xsd;string">Eukaryota</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;OBI_0100026"/>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">Eukaryota</obo:IAO_0000111>
+        <obo:IAO_0000118 rdf:datatype="&xsd;string">eucaryotes</obo:IAO_0000118>
+        <obo:IAO_0000118 rdf:datatype="&xsd;string">eukaryotes</obo:IAO_0000118>
+        <obo:IAO_0000412 rdf:resource="&obo;ncbitaxon.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_314146 -->
+
+    <owl:Class rdf:about="&obo;NCBITaxon_314146">
+        <rdfs:label rdf:datatype="&xsd;string">Euarchontoglires</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;NCBITaxon_40674"/>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">Euarchontoglires</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;ncbitaxon.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_32523 -->
+
+    <owl:Class rdf:about="&obo;NCBITaxon_32523">
+        <rdfs:label rdf:datatype="&xsd;string">Tetrapoda</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;NCBITaxon_117571"/>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">Tetrapoda</obo:IAO_0000111>
+        <obo:IAO_0000118 rdf:datatype="&xsd;string">tetrapods</obo:IAO_0000118>
+        <obo:IAO_0000412 rdf:resource="&obo;ncbitaxon.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_32524 -->
+
+    <owl:Class rdf:about="&obo;NCBITaxon_32524">
+        <rdfs:label rdf:datatype="&xsd;string">Amniota</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;NCBITaxon_32523"/>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">Amniota</obo:IAO_0000111>
+        <obo:IAO_0000118 rdf:datatype="&xsd;string">amniotes</obo:IAO_0000118>
+        <obo:IAO_0000412 rdf:resource="&obo;ncbitaxon.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_33154 -->
+
+    <owl:Class rdf:about="&obo;NCBITaxon_33154">
+        <rdfs:label rdf:datatype="&xsd;string">Opisthokonta</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;NCBITaxon_2759"/>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">Opisthokonta</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;ncbitaxon.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_33213 -->
+
+    <owl:Class rdf:about="&obo;NCBITaxon_33213">
+        <rdfs:label rdf:datatype="&xsd;string">Bilateria</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;NCBITaxon_33154"/>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">Bilateria</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;ncbitaxon.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_40674 -->
+
+    <owl:Class rdf:about="&obo;NCBITaxon_40674">
+        <rdfs:label rdf:datatype="&xsd;string">Mammalia</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;NCBITaxon_32524"/>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">Mammalia</obo:IAO_0000111>
+        <obo:IAO_0000118 rdf:datatype="&xsd;string">mammals</obo:IAO_0000118>
+        <obo:IAO_0000412 rdf:resource="&obo;ncbitaxon.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_7742 -->
+
+    <owl:Class rdf:about="&obo;NCBITaxon_7742">
+        <rdfs:label rdf:datatype="&xsd;string">Vertebrata &lt;Metazoa&gt;</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;NCBITaxon_33213"/>
+        <obo:IAO_0000118 rdf:datatype="&xsd;string">Vertebrata</obo:IAO_0000118>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">Vertebrata &lt;Metazoa&gt;</obo:IAO_0000111>
+        <obo:IAO_0000118 rdf:datatype="&xsd;string">vertebrates</obo:IAO_0000118>
+        <obo:IAO_0000412 rdf:resource="&obo;ncbitaxon.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9606 -->
+
+    <owl:Class rdf:about="&obo;NCBITaxon_9606">
+        <rdfs:label rdf:datatype="&xsd;string">Homo sapiens</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;NCBITaxon_314146"/>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">Homo sapiens</obo:IAO_0000111>
+        <obo:IAO_0000118 rdf:datatype="&xsd;string">human</obo:IAO_0000118>
+        <obo:IAO_0000118 rdf:datatype="&xsd;string">human being</obo:IAO_0000118>
+        <obo:IAO_0000118 rdf:datatype="&xsd;string">man</obo:IAO_0000118>
+        <obo:IAO_0000412 rdf:resource="&obo;ncbitaxon.owl"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0000011 -->
 
     <owl:Class rdf:about="&obo;OBI_0000011">
@@ -513,6 +671,19 @@ for now.</obo:IAO_0000116>
     <owl:Class rdf:about="&obo;OBI_0000941">
         <rdfs:label rdf:datatype="&xsd;string">service consumer role</rdfs:label>
         <rdfs:subClassOf rdf:resource="&obo;BFO_0000023"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;BFO_0000052"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&obo;NCBITaxon_9606"/>
+                            <rdf:Description rdf:about="&obo;OBI_0000245"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000112 rdf:datatype="&xsd;string">A biologist who uses a sequencing services fulfills the role of a service consumer</obo:IAO_0000112>
         <obo:IAO_0000119 rdf:datatype="&xsd;string">OBI</obo:IAO_0000119>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">a role which inheres in a person who uses a service</obo:IAO_0000115>
@@ -526,6 +697,19 @@ for now.</obo:IAO_0000116>
     <owl:Class rdf:about="&obo;OBI_0000947">
         <rdfs:label rdf:datatype="&xsd;string">service provider role</rdfs:label>
         <rdfs:subClassOf rdf:resource="&obo;BFO_0000023"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;BFO_0000052"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&obo;NCBITaxon_9606"/>
+                            <rdf:Description rdf:about="&obo;OBI_0000245"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000054"/>
@@ -573,6 +757,24 @@ for now.</obo:IAO_0000116>
         <obo:IAO_0000119 rdf:datatype="&xsd;string">OBI workshop San Diego 2011</obo:IAO_0000119>
         <obo:IAO_0000112 rdf:datatype="&xsd;string">providing a training course for UCSD employees how to run a DNA sequencer; sequencing a DNA sample provided by a service consumer restricted to non-human samples; giving access to tissue samples in a biobank within OHSU; JAX shipping mice from their colony </obo:IAO_0000112>
         <obo:IAO_0000111 rdf:datatype="&xsd;string">service</obo:IAO_0000111>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0100026 -->
+
+    <owl:Class rdf:about="&obo;OBI_0100026">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;NCBITaxon_10239"/>
+                    <rdf:Description rdf:about="&obo;NCBITaxon_2"/>
+                    <rdf:Description rdf:about="&obo;NCBITaxon_2157"/>
+                    <rdf:Description rdf:about="&obo;NCBITaxon_2759"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;BFO_0000040"/>
     </owl:Class>
 </rdf:RDF>
 
