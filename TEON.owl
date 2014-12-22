@@ -4,11 +4,14 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY btl2 "http://purl.org/biotop/btl2.owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY teon "http://www.nutes.ufpe.br/teon.owl#" >
     <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY obi "http://purl.obolibrary.org/obo/obi.owl#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY exampleOWL "http://example.ontology.com/exampleOWL.owl#" >
 ]>
 
 
@@ -17,9 +20,12 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:teon="http://www.nutes.ufpe.br/teon.owl#"
+     xmlns:btl2="http://purl.org/biotop/btl2.owl#"
+     xmlns:obi="http://purl.obolibrary.org/obo/obi.owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:exampleOWL="http://example.ontology.com/exampleOWL.owl#"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://www.nutes.ufpe.br/teon.owl">
         <rdfs:label xml:lang="en">TEON</rdfs:label>
@@ -30,9 +36,26 @@
         <dc:format xml:lang="en">OWL2</dc:format>
         <dc:title xml:lang="en">Telehealth Ontology</dc:title>
         <dc:source xml:lang="en">http://www.nutes.ufpe.br/teon.owl</dc:source>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
         <owl:imports rdf:resource="http://purl.org/biotop/btl2.owl"/>
-        <owl:versionIRI rdf:resource="http://www.nutes.ufpe.br/teon.owl/0.1"/>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.ontology.com/exampleOWL.owl#synonym -->
+
+    <owl:AnnotationProperty rdf:about="&exampleOWL;synonym"/>
     
 
 
@@ -47,20 +70,29 @@
     
 
 
-    <!-- http://example.ontology.com/exampleOWL.owl#ManagementRole -->
+    <!-- http://example.ontology.com/exampleOWL.owl#ManagerRole -->
 
-    <owl:Class rdf:about="http://example.ontology.com/exampleOWL.owl#ManagementRole">
-        <rdfs:label xml:lang="en">management role</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#Role"/>
+    <owl:Class rdf:about="&exampleOWL;ManagerRole">
+        <rdfs:label xml:lang="en">manager role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&btl2;Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.ontology.com/exampleOWL.owl#OccupationalRole -->
+
+    <owl:Class rdf:about="&exampleOWL;OccupationalRole">
+        <rdfs:label xml:lang="en">occupational role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&btl2;Role"/>
     </owl:Class>
     
 
 
     <!-- http://example.ontology.com/exampleOWL.owl#RequestorRole -->
 
-    <owl:Class rdf:about="http://example.ontology.com/exampleOWL.owl#RequestorRole">
+    <owl:Class rdf:about="&exampleOWL;RequestorRole">
         <rdfs:label xml:lang="en">requestor role</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#Role"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000941"/>
         <skos:definition xml:lang="en">Role applied to humans when requesting additional information by means of a telecommunication media.</skos:definition>
     </owl:Class>
     
@@ -68,10 +100,271 @@
 
     <!-- http://example.ontology.com/exampleOWL.owl#TeleconsultantRole -->
 
-    <owl:Class rdf:about="http://example.ontology.com/exampleOWL.owl#TeleconsultantRole">
+    <owl:Class rdf:about="&exampleOWL;TeleconsultantRole">
         <rdfs:label xml:lang="en">teleconsultant role</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#Role"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000947"/>
         <skos:definition xml:lang="en">Role applied to intermediate humans, who are capable of transferring information to a requestor, during the delivery of services by means of a telecommunication media.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://example.ontology.com/exampleOWL.owl#TelehealthService -->
+
+    <owl:Class rdf:about="&exampleOWL;TelehealthService">
+        <rdfs:label>telehealth service</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001173"/>
+        <exampleOWL:synonym rdf:datatype="&xsd;string">serviço de telessaúde</exampleOWL:synonym>
+        <exampleOWL:synonym>telemedicine service</exampleOWL:synonym>
+        <dc:source>WHO Group Consultation on Health Telematics. A Health Telematics Policy in support of WHO’s Health-for-All Strategy for Global Health Development. Geneva; 1997.</dc:source>
+        <skos:definition xml:lang="en">&apos;Telehealth service&apos; is a class which encompasses the notion of services carried out over a distance by means of information and communications technologies (ICT) for the purposes of global health propotion, disease control and health care, as well as education, management, and research for health.</skos:definition>
+        <exampleOWL:synonym>health telematics</exampleOWL:synonym>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000015 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000015">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&btl2;Quality"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000059"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&btl2;Quality"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000030 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000030">
+        <rdfs:subClassOf rdf:resource="&btl2;InformationObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000058"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000015"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000052"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000178"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000178 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000178">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&btl2;Compound"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&btl2;isBearerOf"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&btl2;Compound"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_10239 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_10239">
+        <rdfs:subClassOf rdf:resource="&btl2;Organism"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_2 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2">
+        <rdfs:subClassOf rdf:resource="&btl2;Organism"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_2157 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2157">
+        <rdfs:subClassOf rdf:resource="&btl2;Organism"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_2759 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2759">
+        <rdfs:subClassOf rdf:resource="&btl2;Organism"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9606 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_314146"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&btl2;isBearerOf"/>
+                        <owl:someValuesFrom rdf:resource="&btl2;Role"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000011 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000011">
+        <rdfs:subClassOf rdf:resource="&btl2;Process"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000245 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000245">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&btl2;Compound"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&btl2;isBearerOf"/>
+                        <owl:someValuesFrom rdf:resource="&btl2;Role"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&btl2;Compound"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000941 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000941">
+        <rdfs:subClassOf rdf:resource="&btl2;Role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&btl2;hasRealization"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001173"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/OBI_0000947"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000947 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000947">
+        <rdfs:subClassOf rdf:resource="&btl2;Role"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001173 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001173">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000011"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&btl2;hasAgent"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&btl2;isBearerOf"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000947"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&btl2;hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&btl2;isBearerOf"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000941"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.org/biotop/btl2.owl#Organism -->
+
+    <rdf:Description rdf:about="&btl2;Organism">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_10239"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2157"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2759"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.nutes.ufpe.br/teon.owl#DentistRole -->
+
+    <owl:Class rdf:about="&teon;DentistRole">
+        <rdfs:label xml:lang="en">dentist role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&exampleOWL;OccupationalRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.nutes.ufpe.br/teon.owl#HealthTechnicianRole -->
+
+    <owl:Class rdf:about="&teon;HealthTechnicianRole">
+        <rdfs:label xml:lang="en">health technician role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&exampleOWL;OccupationalRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.nutes.ufpe.br/teon.owl#NurseRole -->
+
+    <owl:Class rdf:about="&teon;NurseRole">
+        <rdfs:label xml:lang="en">nurse role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&exampleOWL;OccupationalRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.nutes.ufpe.br/teon.owl#PhysicianRole -->
+
+    <owl:Class rdf:about="&teon;PhysicianRole">
+        <rdfs:label xml:lang="en">physician role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&exampleOWL;OccupationalRole"/>
     </owl:Class>
 </rdf:RDF>
 
