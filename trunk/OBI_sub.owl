@@ -17,7 +17,11 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:obo="http://purl.obolibrary.org/obo/">
-    <owl:Ontology rdf:about="&obo;obi.owl"/>
+    <owl:Ontology rdf:about="&obo;obi.owl">
+        <rdfs:label rdf:datatype="&xsd;string">Ontology for Biomedical Investigation</rdfs:label>
+        <owl:versionInfo rdf:datatype="&xsd;string">2014-12-03</owl:versionInfo>
+        <rdfs:comment rdf:datatype="&xsd;string">Subset of OBI used in TEON</rdfs:comment>
+    </owl:Ontology>
     
 
 
@@ -91,16 +95,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BFO_0000051 -->
-
-    <owl:ObjectProperty rdf:about="&obo;BFO_0000051">
-        <rdfs:label xml:lang="en">has part</rdfs:label>
-        <obo:IAO_0000111 xml:lang="en">has part</obo:IAO_0000111>
-        <obo:IAO_0000118 xml:lang="en">has_part</obo:IAO_0000118>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/BFO_0000052 -->
 
     <owl:ObjectProperty rdf:about="&obo;BFO_0000052">
@@ -108,37 +102,6 @@
         <rdfs:label xml:lang="en">inheres in</rdfs:label>
         <obo:IAO_0000111 xml:lang="en">inheres in</obo:IAO_0000111>
         <obo:IAO_0000118 xml:lang="en">inheres_in</obo:IAO_0000118>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000053 -->
-
-    <owl:ObjectProperty rdf:about="&obo;BFO_0000053">
-        <rdfs:label xml:lang="en">is bearer of</rdfs:label>
-        <obo:IAO_0000118 xml:lang="en">bearer of</obo:IAO_0000118>
-        <obo:IAO_0000118 xml:lang="en">bearer_of</obo:IAO_0000118>
-        <obo:IAO_0000111 xml:lang="en">is bearer of</obo:IAO_0000111>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000054 -->
-
-    <owl:ObjectProperty rdf:about="&obo;BFO_0000054">
-        <rdfs:label xml:lang="en">is realized by</rdfs:label>
-        <obo:IAO_0000111 xml:lang="en">is realized by</obo:IAO_0000111>
-        <obo:IAO_0000118 xml:lang="en">realized by</obo:IAO_0000118>
-        <obo:IAO_0000118 xml:lang="en">realized_by</obo:IAO_0000118>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000055 -->
-
-    <owl:ObjectProperty rdf:about="&obo;BFO_0000055">
-        <rdfs:label xml:lang="en">realizes</rdfs:label>
-        <obo:IAO_0000111 xml:lang="en">realizes</obo:IAO_0000111>
     </owl:ObjectProperty>
     
 
@@ -162,20 +125,33 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/IAO_0000136 -->
+    <!-- http://purl.org/biotop/btl2.owl#hasPart -->
 
-    <owl:ObjectProperty rdf:about="&obo;IAO_0000136">
-        <rdfs:label xml:lang="en">is about</rdfs:label>
-        <obo:IAO_0000116 xml:lang="en">7/6/2009 Alan Ruttenberg. Following discussion with Jonathan Rees, and introduction of &quot;mentions&quot; relation. Weaken the is_about relationship to be primitive. 
+    <owl:ObjectProperty rdf:about="http://purl.org/biotop/btl2.owl#hasPart"/>
+    
 
-We will try to build it back up by elaborating the various subproperties that are more precisely defined.
 
-Some currently missing phenomena that should be considered &quot;about&quot; are predications - &quot;The only person who knows the answer is sitting beside me&quot; , Allegory, Satire, and other literary forms that can be topical without explicitly mentioning the topic.</obo:IAO_0000116>
-        <obo:IAO_0000112 xml:lang="en">This document is about information artifacts and their representations</obo:IAO_0000112>
-        <obo:IAO_0000111 xml:lang="en">is about</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">is_about is a (currently) primitive relation that relates an information artifact to an entity.</obo:IAO_0000115>
-        <rdfs:domain rdf:resource="&obo;IAO_0000030"/>
-    </owl:ObjectProperty>
+    <!-- http://purl.org/biotop/btl2.owl#hasRealization -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/biotop/btl2.owl#hasRealization"/>
+    
+
+
+    <!-- http://purl.org/biotop/btl2.owl#isBearerOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/biotop/btl2.owl#isBearerOf"/>
+    
+
+
+    <!-- http://purl.org/biotop/btl2.owl#isIncludedIn -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/biotop/btl2.owl#isIncludedIn"/>
+    
+
+
+    <!-- http://purl.org/biotop/btl2.owl#isRealizationOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/biotop/btl2.owl#isRealizationOf"/>
     
 
 
@@ -187,64 +163,6 @@ Some currently missing phenomena that should be considered &quot;about&quot; are
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000007 -->
-
-    <owl:Class rdf:about="&obo;BFO_0000007">
-        <rdfs:label xml:lang="en">process</rdfs:label>
-        <obo:IAO_0000115 xml:lang="en">A processual entity  that is a maximally connected spatiotemporal whole and has bona fide beginnings and endings corresponding to real discontinuities.</obo:IAO_0000115>
-        <obo:IAO_0000111 xml:lang="en">process</obo:IAO_0000111>
-        <obo:IAO_0000112 xml:lang="en">the life of an organism</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">the process of cell-division</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">the process of sleeping</obo:IAO_0000112>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000019 -->
-
-    <owl:Class rdf:about="&obo;BFO_0000019">
-        <rdfs:label xml:lang="en">quality</rdfs:label>
-        <obo:IAO_0000115 xml:lang="en">A specifically dependent continuant  that is exhibited if it inheres in an entity or entities at all (a categorical property).</obo:IAO_0000115>
-        <obo:IAO_0000111 xml:lang="en">quality</obo:IAO_0000111>
-        <obo:IAO_0000112 xml:lang="en">the ambient temperature of air</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">the circumference of a waist</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">the color of a tomato</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">the mass of a piece of gold</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">the shape of a nose</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">the weight of a chimpanzee</obo:IAO_0000112>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000023 -->
-
-    <owl:Class rdf:about="&obo;BFO_0000023">
-        <rdfs:label xml:lang="en">role</rdfs:label>
-        <obo:IAO_0000115 xml:lang="en">A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts.</obo:IAO_0000115>
-        <obo:IAO_0000111 xml:lang="en">role</obo:IAO_0000111>
-        <obo:IAO_0000112 xml:lang="en">the role of a biological grandfather as legal guardian in the context of a system of laws</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">the role of a chemical compound in an experiment</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">the role of a patient relative as defined by a hospital administrative form</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">the role of a person as a surgeon</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">the role of a student in a university</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">the role of a woman as a legal mother in the context of system of laws</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">the role of ingested matter in digestion</obo:IAO_0000112>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
-
-    <owl:Class rdf:about="&obo;BFO_0000040">
-        <rdfs:label xml:lang="en">material entity</rdfs:label>
-        <obo:IAO_0000115 xml:lang="en">An independent continuant  that is spatially extended whose identity is independent of that of other entities and can be maintained through time.</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">Examples: collection of random bacteria, a chair, dorsal surface of the body</obo:IAO_0000116>
-        <obo:IAO_0000116 xml:lang="en">Material entity [snap:MaterialEntity] subsumes object [snap:Object], fiat object part [snap:FiatObjectPart], and object aggregate [snap:ObjectAggregate], which assume a three level theory of granularity, which is inadequate for some domains, such as biology.</obo:IAO_0000116>
-        <obo:IAO_0000111 xml:lang="en">material entity</obo:IAO_0000111>
-    </owl:Class>
     
 
 
@@ -276,7 +194,7 @@ purpose of a study; support of hypothesis, discovery of new information</obo:IAO
         <rdfs:subClassOf rdf:resource="&obo;IAO_0000033"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPart"/>
                 <owl:allValuesFrom>
                     <owl:Class>
                         <owl:complementOf>
@@ -303,18 +221,6 @@ purpose of a study; support of hypothesis, discovery of new information</obo:IAO
 
     <owl:Class rdf:about="&obo;IAO_0000015">
         <rdfs:label xml:lang="en">information carrier</rdfs:label>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&obo;BFO_0000019"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&obo;BFO_0000059"/>
-                        <owl:someValuesFrom rdf:resource="&obo;IAO_0000030"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="&obo;BFO_0000019"/>
         <obo:IAO_0000116 xml:lang="en">12/15/09: There is a concern that some ways that carry information may be processes rather than qualities, such as in a &apos;delayed wave carrier&apos;.</obo:IAO_0000116>
         <obo:IAO_0000115 xml:lang="en">A quality of an information bearer that imparts the information content</obo:IAO_0000115>
         <obo:IAO_0000112 xml:lang="en">In the case of a printed paperback novel the physicality of the ink and of the paper form part of the information bearer. The qualities of appearing black and having a certain pattern for the ink and appearing white for the paper form part of the information carrier in this case.</obo:IAO_0000112>
@@ -330,24 +236,8 @@ purpose of a study; support of hypothesis, discovery of new information</obo:IAO
         <rdfs:label xml:lang="en">information content entity</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;BFO_0000058"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="&obo;IAO_0000015"/>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="&obo;BFO_0000052"/>
-                                <owl:someValuesFrom rdf:resource="&obo;IAO_0000178"/>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;IAO_0000136"/>
-                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+                <owl:onProperty rdf:resource="&obo;BFO_0000052"/>
+                <owl:someValuesFrom rdf:resource="&obo;IAO_0000178"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000112 xml:lang="en">Examples of information content entites include journal articles, data, graphical layouts, and graphs.</obo:IAO_0000112>
@@ -366,12 +256,6 @@ Previous. An information content entity is a non-realizable information entity t
     <owl:Class rdf:about="&obo;IAO_0000033">
         <rdfs:label xml:lang="en">directive information entity</rdfs:label>
         <rdfs:subClassOf rdf:resource="&obo;IAO_0000030"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;IAO_0000136"/>
-                <owl:someValuesFrom rdf:resource="&obo;BFO_0000023"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000116 xml:lang="en">2009-03-16: provenance: a term realizable information entity was proposed for OBI (OBI_0000337) , edited by the PlanAndPlannedProcess branch. Original definition was  &quot;is the specification of a process that can be
 concretized and realized by an actor&quot; with alternative term  &quot;instruction&quot;.It has been subsequently moved to IAO where the objective for which the original term was defined was satisfied with the definitionof this, different, term.</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">8/6/2009 Alan Ruttenberg: Changed label from &quot;information entity about a realizable&quot; after discussions at ICBO</obo:IAO_0000116>
@@ -390,13 +274,13 @@ concretized and realized by an actor&quot; with alternative term  &quot;instruct
         <rdfs:subClassOf rdf:resource="&obo;IAO_0000033"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPart"/>
                 <owl:someValuesFrom rdf:resource="&obo;IAO_0000005"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPart"/>
                 <owl:someValuesFrom rdf:resource="&obo;IAO_0000007"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -422,23 +306,6 @@ Request that IAO either clarify these or change definitions not to use them</rdf
 
     <owl:Class rdf:about="&obo;IAO_0000178">
         <rdfs:label xml:lang="en">material information bearer</rdfs:label>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&obo;BFO_0000040"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&obo;BFO_0000053"/>
-                        <owl:someValuesFrom>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="&obo;BFO_0000059"/>
-                                <owl:someValuesFrom rdf:resource="&obo;IAO_0000030"/>
-                            </owl:Restriction>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="&obo;BFO_0000040"/>
         <obo:IAO_0000115 xml:lang="en">A material entity in which a concretization of an information content entity inheres.</obo:IAO_0000115>
         <obo:IAO_0000112 xml:lang="en">A page of a paperback novel with writing on it. The paper itself is a material information bearer, the pattern of ink is the information carrier. Additional examples: a hard drive, a brain.</obo:IAO_0000112>
         <obo:IAO_0000111 xml:lang="en">material information bearer</obo:IAO_0000111>
@@ -449,7 +316,9 @@ Request that IAO either clarify these or change definitions not to use them</rdf
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_10239 -->
 
     <owl:Class rdf:about="&obo;NCBITaxon_10239">
-        <rdfs:subClassOf rdf:resource="&obo;OBI_0100026"/>
+        <rdfs:label rdf:datatype="&xsd;string">Viruses</rdfs:label>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">Viruses</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;ncbitaxon.owl"/>
     </owl:Class>
     
 
@@ -470,7 +339,6 @@ Request that IAO either clarify these or change definitions not to use them</rdf
 
     <owl:Class rdf:about="&obo;NCBITaxon_2">
         <rdfs:label rdf:datatype="&xsd;string">Bacteria</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OBI_0100026"/>
         <obo:IAO_0000111 rdf:datatype="&xsd;string">Bacteria</obo:IAO_0000111>
         <obo:IAO_0000118 rdf:datatype="&xsd;string">eubacteria</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="&obo;ncbitaxon.owl"/>
@@ -482,7 +350,6 @@ Request that IAO either clarify these or change definitions not to use them</rdf
 
     <owl:Class rdf:about="&obo;NCBITaxon_2157">
         <rdfs:label rdf:datatype="&xsd;string">Archaea</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OBI_0100026"/>
         <obo:IAO_0000111 rdf:datatype="&xsd;string">Archaea</obo:IAO_0000111>
         <obo:IAO_0000412 rdf:resource="&obo;ncbitaxon.owl"/>
     </owl:Class>
@@ -493,7 +360,6 @@ Request that IAO either clarify these or change definitions not to use them</rdf
 
     <owl:Class rdf:about="&obo;NCBITaxon_2759">
         <rdfs:label rdf:datatype="&xsd;string">Eukaryota</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OBI_0100026"/>
         <obo:IAO_0000111 rdf:datatype="&xsd;string">Eukaryota</obo:IAO_0000111>
         <obo:IAO_0000118 rdf:datatype="&xsd;string">eucaryotes</obo:IAO_0000118>
         <obo:IAO_0000118 rdf:datatype="&xsd;string">eukaryotes</obo:IAO_0000118>
@@ -603,17 +469,21 @@ Request that IAO either clarify these or change definitions not to use them</rdf
     <owl:Class rdf:about="&obo;OBI_0000011">
         <rdfs:label xml:lang="en">planned process</rdfs:label>
         <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;BFO_0000055"/>
-                <owl:someValuesFrom>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/biotop/btl2.owl#Process"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&obo;BFO_0000059"/>
-                        <owl:someValuesFrom rdf:resource="&obo;IAO_0000104"/>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#isRealizationOf"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&obo;BFO_0000059"/>
+                                <owl:someValuesFrom rdf:resource="&obo;IAO_0000104"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
                     </owl:Restriction>
-                </owl:someValuesFrom>
-            </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="&obo;BFO_0000007"/>
         <obo:IAO_0000116 rdf:datatype="&xsd;string">&apos;Plan&apos; includes a future direction sense. That can be problematic if plans are changed during their execution. There are however implicit contingencies for protocols that an agent has in his mind that can be considered part of the plan, even if the agent didn&apos;t have them in mind before. Therefore, a planned process can diverge from what the agent would have said the plan was before executing it, by adjusting to problems encountered during execution (e.g. choosing another reagent with equivalent properties, if the originally planned one has run out.)</obo:IAO_0000116>
         <obo:IAO_0000232 rdf:datatype="&xsd;string">6/11/9: Edited at workshop. Used to include: is initiated by an agent</obo:IAO_0000232>
         <obo:IAO_0000112 rdf:datatype="&xsd;string">Injecting mice with a vaccine in order to test its efficacy</obo:IAO_0000112>
@@ -631,7 +501,6 @@ objectives is a planned process.</obo:IAO_0000116>
 
     <owl:Class rdf:about="&obo;OBI_0000245">
         <rdfs:label xml:lang="en">organization</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;BFO_0000040"/>
         <obo:IAO_0000115 xml:lang="en">An entity that can bear roles, has members, and has a set of organization rules. Members of organizations are either organizations themselves or individual people. Members can bear specific organization member roles that are determined in the organization rules. The organization rules also determine how decisions are made on behalf of the organization by the organization members.</obo:IAO_0000115>
         <obo:IAO_0000116 xml:lang="en">BP: The definition summarizes long email discussions on the OBI developer, roles, biomaterial and denrie branches. It leaves open if an organization is a material entity or a dependent continuant, as no consensus was reached on that.  The current placement as material is therefore temporary, in order to move forward with development. Here is the entire email summary, on which the definition is based:
 
@@ -670,7 +539,6 @@ for now.</obo:IAO_0000116>
 
     <owl:Class rdf:about="&obo;OBI_0000941">
         <rdfs:label rdf:datatype="&xsd;string">service consumer role</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;BFO_0000023"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000052"/>
@@ -696,7 +564,6 @@ for now.</obo:IAO_0000116>
 
     <owl:Class rdf:about="&obo;OBI_0000947">
         <rdfs:label rdf:datatype="&xsd;string">service provider role</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;BFO_0000023"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000052"/>
@@ -712,8 +579,8 @@ for now.</obo:IAO_0000116>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;BFO_0000054"/>
-                <owl:allValuesFrom rdf:resource="&obo;OBI_0000011"/>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasRealization"/>
+                <owl:allValuesFrom rdf:resource="&obo;OBI_0001173"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000112 rdf:datatype="&xsd;string">Jackson Lab provides experimental animals, EBI provides training on databases, a core facility provides access to a DNA sequencer.</obo:IAO_0000112>
@@ -727,29 +594,10 @@ for now.</obo:IAO_0000116>
 
     <owl:Class rdf:about="&obo;OBI_0001173">
         <rdfs:label rdf:datatype="&xsd;string">service</rdfs:label>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&obo;OBI_0000011"/>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="&obo;BFO_0000055"/>
-                                <owl:someValuesFrom rdf:resource="&obo;OBI_0000941"/>
-                            </owl:Restriction>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="&obo;BFO_0000055"/>
-                                <owl:someValuesFrom rdf:resource="&obo;OBI_0000947"/>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&obo;OBI_0000011"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPart"/>
                 <owl:someValuesFrom rdf:resource="&obo;OBI_0000011"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -761,21 +609,15 @@ for now.</obo:IAO_0000116>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0100026 -->
+    <!-- http://purl.org/biotop/btl2.owl#Process -->
 
-    <owl:Class rdf:about="&obo;OBI_0100026">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&obo;NCBITaxon_10239"/>
-                    <rdf:Description rdf:about="&obo;NCBITaxon_2"/>
-                    <rdf:Description rdf:about="&obo;NCBITaxon_2157"/>
-                    <rdf:Description rdf:about="&obo;NCBITaxon_2759"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="&obo;BFO_0000040"/>
-    </owl:Class>
+    <owl:Class rdf:about="http://purl.org/biotop/btl2.owl#Process"/>
+    
+
+
+    <!-- http://purl.org/biotop/btl2.owl#Role -->
+
+    <owl:Class rdf:about="http://purl.org/biotop/btl2.owl#Role"/>
 </rdf:RDF>
 
 
