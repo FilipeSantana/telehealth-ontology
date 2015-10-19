@@ -172,12 +172,6 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPart"/>
-                <owl:someValuesFrom rdf:resource="&teon;ReplyAction"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
             <owl:Class>
                 <owl:complementOf>
                     <owl:Restriction>
@@ -200,6 +194,21 @@
                 <owl:someValuesFrom rdf:resource="http://purl.org/biotop/btl2.owl#PointInTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPart"/>
+                <owl:someValuesFrom rdf:resource="&teon;ReplyAction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.nutes.ufpe.br/teon.owl#AudioVisualDocument -->
+
+    <owl:Class rdf:about="&teon;AudioVisualDocument">
+        <rdfs:label>audio-visual document</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
     </owl:Class>
     
 
@@ -281,12 +290,6 @@
         <rdfs:label>Reply action</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#Action"/>
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#isPrecededBy"/>
-                <owl:allValuesFrom rdf:resource="&teon;RequestAction"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
@@ -304,6 +307,12 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#isPrecededBy"/>
+                <owl:allValuesFrom rdf:resource="&teon;RequestAction"/>
+            </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Class>
@@ -326,12 +335,6 @@
         <rdfs:label>Request action</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#Action"/>
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#precedes"/>
-                <owl:allValuesFrom rdf:resource="&teon;ReplyAction"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
@@ -349,6 +352,12 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#precedes"/>
+                <owl:allValuesFrom rdf:resource="&teon;ReplyAction"/>
+            </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Class>
@@ -372,6 +381,19 @@
         <rdfs:subClassOf rdf:resource="&teon;InformationTransmission"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#cooccurringWith"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&teon;ReplyAction"/>
+                            <rdf:Description rdf:about="&teon;RequestAction"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#projectsOnto"/>
                 <owl:allValuesFrom rdf:resource="http://purl.org/biotop/btl2.owl#TimeInterval"/>
             </owl:Restriction>
@@ -384,27 +406,14 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPart"/>
-                <owl:someValuesFrom rdf:resource="&teon;ReplyAction"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#projectsOnto"/>
                 <owl:someValuesFrom rdf:resource="http://purl.org/biotop/btl2.owl#TimeInterval"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#cooccurringWith"/>
-                <owl:allValuesFrom>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="&teon;ReplyAction"/>
-                            <rdf:Description rdf:about="&teon;RequestAction"/>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:allValuesFrom>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPart"/>
+                <owl:someValuesFrom rdf:resource="&teon;ReplyAction"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -560,6 +569,15 @@
     <owl:Class rdf:about="&teon;TelerehabilitationService">
         <rdfs:label>Tele-rehabilitation service</rdfs:label>
         <rdfs:subClassOf rdf:resource="&teon;TelehealthService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.nutes.ufpe.br/teon.owl#Video -->
+
+    <owl:Class rdf:about="&teon;Video">
+        <rdfs:label>video</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&teon;AudioVisualDocument"/>
     </owl:Class>
 </rdf:RDF>
 
